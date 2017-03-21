@@ -1,0 +1,67 @@
+<style>
+.cancel {
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+}
+.cancel .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+
+}
+.titles {
+    font-weight: bold;
+    font-size: 17px;
+}
+</style>
+
+<div class="cancel">
+<div class="container">
+{{cancellation}}
+ <div class="row">
+ <div class="col-md-6 col-md-offset-3">
+ <input class="form-control" type="text" placeholder="Search movie for cancellation" ng-model="test">
+ </div>
+ </div>
+</div>
+
+
+<div class="container">
+
+    <h1><center>{{msg}}</center></h1>
+
+</div>
+
+<div class="container" ng-show="shows">
+
+ <div class="row">
+    <div class="col-md-6 movie-box" ng-repeat="cancel in cancelList | filter:test">
+      <div class="col-md-4">
+         <img class="img-thumbnail" style="width:100%;height:180px;" ng-src={{cancel.moviPoster}}  />
+      </div>
+	    <div class="col-md-3">
+		 <p class="movie-title details">Booking Id :</p>
+		 <p class="movie-title details">User Name :</p>
+         <p class="movie-title details">Movie Name :</p>
+         <p class="movie-title details">Theatre :</p>
+         <p class="movie-title details">Show Date :</p>
+         <p class="movie-title details">Quantity :</p>
+         <p class="movie-title details">Total Price :</p>
+           <p class="movie-title details">Booked Seat :</p>
+       </div>
+      <div class="col-md-5">
+         <p class="titles"> {{cancel.bookingid}}</p>
+		  <p class="titles"> {{cancel.name}}</p>
+         <p class="titles"> {{cancel.bookedMovie}}</p>
+         <p class="titles"> {{cancel.theatre+','+cancel.city}}</p>
+         <p class="titles"> {{cancel.bookingdate+' '+cancel.bookingtime}}</p>
+         <p class="titles"> {{cancel.quantity}}</p>
+         <p class="titles"> {{cancel.quantity*cancel.price}}</p>
+          <p class="titles"> {{cancel.seat_no}}</p>
+         <button ng-click="cancelTickets(cancel)"  type="button"  class="btn btn-primary">Cancel</button>
+       </div>
+      </div>
+ </div>
+
+</div>
+</div>

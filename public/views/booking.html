@@ -1,0 +1,65 @@
+
+<style>
+.booking {
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+}
+.booking .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+ 
+}
+
+</style>
+
+<div class="booking">
+<div class="container">
+
+
+   
+   <div class="row">
+   
+   <div class="col-md-2">
+     <img src="{{bookedMovie.moviPoster}}" class="img-thumbnail" style="width:150px;height:150px">
+   </div>
+   
+   <div class="col-md-10">
+   <h3>{{ tagline }}</h3>
+	</div>
+	
+	</div>
+	
+
+<h2><center>{{msg}}</center></h2>
+
+<div class="row">
+
+  <div class="col-md-12">
+
+ <div class="col-md-1" ng-repeat="fdts in fdts">
+ <a href="" ng-click="getDate(fdts)" class="btn-sm btn-primary">{{fdts.fdate}}</a>
+ </div>
+
+ </div>
+ <br>
+
+<div class="col-md-2" ng-repeat="movie in asnmoviesList">
+			
+                 <p class="movie-title">Theater : <span class="titles"> {{movie.theatre}}</span></p>
+                 <p class="movie-title">City : <span class="city">       {{movie.city}}</span></p>
+           
+                 <p>Timings : <span style="padding:12px" ng-repeat="ashow in movie.showTimings">
+                 	<a href=""  ng-click="handleThisElement($event)" id="{{movie.theatre+'-'+ashow+'-'+movie.fromdate+'-'+movie.todate+'-'+movie.city}}">{{ashow}}</a>
+                 </span></p>
+                 <span ng-repeat="dates in movie.showDates">
+{{dates}}
+</span>        				 
+                 
+			</div>
+		
+	</div>
+
+
+</div>
+</div>

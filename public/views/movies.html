@@ -1,0 +1,111 @@
+<style>
+.movie {
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+}
+.movie .container {
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.movie .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+.movie .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+
+</style>
+
+
+<div class="movie">
+<div class="container">
+   <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">SEARCH AND FIND YOUR MOVIES HERE</span>
+                       
+                    </div>
+                </div>
+            </div>
+ <div class="row">
+ <div class="col-lg-12 text-center">
+ <input class="form-control" type="text" placeholder="Search Movie" ng-model="moviTitle">
+ </div>
+  <div class="col-lg-12">
+ <button ng-click="searchMovie(moviTitle);" class="btn btn-primary">Search</button>
+ </div>
+ </div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-9 col-md-offset-3" style="padding:10px">
+
+  <input type="radio"  ng-model="myVar" ng-click="refreshAll()" value="all"> All
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Comedy"> Comedy
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Action"> Action
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Romance"> Romance
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Drama"> Drama
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Crime"> Crime
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Thriller"> Thriller
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Biography"> Biography
+  <input type="radio"  ng-model="myVar" ng-click="searchbyGenre()" value="Sport"> Sport
+</div>
+</div>
+</div>`
+</div>
+
+
+<div class="container">
+
+    <h1><center>{{msg}}</center></h1>
+
+</div>
+
+
+<div class="container" ng-show="details">
+
+ <div class="row">
+    <div class="col-md-12 movie-box">
+      <div class="col-md-4">
+         <img class="img-thumbnail" ng-src={{movieList.moviPoster}} />
+      </div>
+      <div class="col-md-8">
+         <p class="movie-title details">Title :</p> <p class="titles"> {{movieList.moviTitle}}</p>
+         <p class="movie-title details">Actors :</p> <p class="titles"> {{movieList.moviActors}}</p>
+         <p class="movie-title details">Director :</p> <p class="titles"> {{movieList.moviDirector}}</p>
+         <p class="movie-title details">Language :</p> <p class="titles"> {{movieList.moviLanguage}}</p>
+          <p class="movie-title details">Generation :</p> <p class="titles"> {{movieList.moviGenre}}</p>      
+         <button ng-click="bookMovie(movieList)"  type="button"  class="btn btn-primary">Book Now</button>
+          <button   ng-click="setData();" class="btn btn-success">Back</button>
+       </div>
+      </div>
+ </div>
+
+</div>
+
+
+
+<div class="container" ng-show="shows">
+
+  <div class="row">
+		<div class="col-md-12">
+			<div class="col-md-3 movie-box" ng-repeat="movie in moviList">
+				<a href="" ng-click="getMovieDetails(movie)"> <img  class="img-thumbnail movie-img" ng-src={{movie.moviPoster}} /></a>
+                 <p class="movie-title">Title : <span class="titles"> {{movie.moviTitle}}</span></p>
+                 <p class="movie-title">Director : <span class="titles"> {{movie.moviDirector}}</span></p>          
+                 <button ng-click="bookMovie(movie)" type="button"  class="btn btn-primary">Book Now</button>
+			</div>
+		</div>
+	</div>
+
+ </div>
+

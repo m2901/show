@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Movie Booking</title>
+    <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/footer.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      
+	  <script src="js/lib/angular.min.js"></script>
+      <script src="js/lib/angular-route.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+	 <script src="js/app.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/BookingCtrl.js"></script>
+	<script src="js/controllers/AdminCtrl.js"></script>
+    <script src="js/controllers/ConfirmCtrl.js"></script>
+	 <script src="js/controllers/MovieCtrl.js"></script>
+	 <script src="js/controllers/loginController.js"></script>
+	 <script src="js/controllers/logoutController.js"></script>
+	 <script src="js/controllers/registerController.js"></script>
+	 <script src="js/controllers/cancellationController.js"></script>
+	 
+    <script src="js/services/services.js"></script>
+	 <script src="js/services/NerdService.js"></script>   
+    <script src="js/services/GeekService.js"></script>
+    <script src="js/appRoutes.js"></script>
+   
+</head>
+
+<body ng-app="sampleApp">
+   
+      <!-- HEADER -->
+   
+		<header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">Movie Booking</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="/movies"><i class="fa fa-youtube-play"></i> Movie</a></li>
+					 <li><a href="/cancellation"><i class="fa fa-remove"></i> Cancellation</a></li>
+                    <li><a href="/admin"><i class="fa fa-cog"></i> Admin</a></li>	
+
+                </ul>
+				
+            </div>
+            </nav>
+        </header>
+
+
+        <div ng-view></div>
+
+   
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted"><strong>&copy;&nbsp;2017 Desgin & developed by: <a href="#">Suraj Pandagre</a></strong></p>
+      </div>
+   </footer>
+   
+ <script src="js/lib/jquery.min.js"></script>
+ <script src="js/lib/bootstrap.min.js"></script>
+ <script src="js/lib/moment.js"></script>
+ <script>
+      moment().format();
+ </script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Movie Booking</title>
+    <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/footer.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      
+	  <script src="js/lib/angular.min.js"></script>
+      <script src="js/lib/angular-route.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+	 <script src="js/app.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/BookingCtrl.js"></script>
+	<script src="js/controllers/AdminCtrl.js"></script>
+    <script src="js/controllers/ConfirmCtrl.js"></script>
+	 <script src="js/controllers/MovieCtrl.js"></script>
+	 <script src="js/controllers/loginController.js"></script>
+	 <script src="js/controllers/logoutController.js"></script>
+	 <script src="js/controllers/registerController.js"></script>
+	 <script src="js/controllers/cancellationController.js"></script>
+	 
+    <script src="js/services/services.js"></script>
+	 <script src="js/services/NerdService.js"></script>   
+    <script src="js/services/GeekService.js"></script>
+    <script src="js/appRoutes.js"></script>
+   
+</head>
+
+<body ng-app="sampleApp">
+   
+      <!-- HEADER -->
+   
+		<header>
+            <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">Show</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/"> <i class="fa fa-home"></i>Home</i></a></li>
+                    <li><a href="/movies"> <i class="fa fa-youtube-play"></i>Movie</a></li>
+					 <li><a href="/cancellation"> <i class="fa fa-remove"></i> Cancel</a></li>
+                    <li><a href="/admin"><i class="fa fa-cog"></i>Login</a></li>
+                    <li><a href="/register"><i class="fa fa-cog"></i>Register<a></li>
+                    <li ng-controller="logoutController" >
+                    <a href="" ng-click='logout()' class=" fa fa-sign-out">Logout</a>
+                    </li> 	
+
+                </ul>
+				
+            </div>
+            </nav>
+        </header>
+
+
+        <div ng-view></div>
+
+   
+	<footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Coming Soon</h3>
+                        <p>We R Coming More with TV Series,<br> Concerts and Many More...
+                            </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>About Show</h3>
+                        <p>Show is a online booking tool</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright <strong>&copy;&nbsp;2017 Desgin & developed by: <a href="#">Mayank Sharma</a></strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+ <script src="js/lib/jquery.min.js"></script>
+ <script src="js/lib/bootstrap.min.js"></script>
+ <script src="js/lib/moment.js"></script>
+ <script>
+      moment().format();
+ </script>
+ 
+</body>
+
+</html>
